@@ -7,6 +7,8 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+const port = ":5000"
+
 func main() {
 	r := gin.Default()
 	r.GET("/ping", func(c *gin.Context) {
@@ -15,5 +17,5 @@ func main() {
 		})
 	})
 	src.DefineRoutes(r)
-	r.Run(":5000")
+	r.Run(port)
 }
