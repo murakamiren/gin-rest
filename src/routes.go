@@ -20,5 +20,6 @@ func DefineRoutes(router gin.IRouter) {
 	{
 		v1.GET("/test", testGetV1())
 		v1.GET("/book", handler.GetBook())
+		v1.GET("/books", handler.GetAllBooks())
 	}
 }
