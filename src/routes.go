@@ -19,6 +19,6 @@ func DefineRoutes(router gin.IRouter) {
 	v1 := router.Group("/v1")
 	{
 		v1.GET("/test", testGetV1())
-		v1.GET("/book", handler.GetAllBook())
+		v1.GET("/book", handler.GetBook())
 	}
 }

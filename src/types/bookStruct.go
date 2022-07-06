@@ -1,9 +1,10 @@
 package types
 
 type BookStruct struct {
-	title string
-	disc string
-	value int
-	author string
-	isPublished bool
+	Title string
+	Disc string
+	Value int
+	Author string
+	IsPublished bool
 }
+

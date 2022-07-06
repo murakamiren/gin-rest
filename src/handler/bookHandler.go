@@ -16,7 +16,7 @@ import (
 // 	}
 // ]
 
-func GetAllBook() gin.HandlerFunc {
+func GetBook() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
 				"title": "nice book",
