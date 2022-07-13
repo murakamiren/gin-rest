@@ -36,8 +36,10 @@ func GetBook() gin.HandlerFunc {
 	}
 }
 
-// func GetAllBooks() gin.HandlerFunc {
-// 	return func (c *gin.Context) {
-// 		c.JSON(http.StatusOK, books)
-// 	}
-// }
+func GetAllBooks() gin.HandlerFunc {
+	return func (c *gin.Context) {
+		var books []types.Book
+		db.DB.Find(&books)
+		c.JSON(http.StatusOK, gin.H{"data": books})
+	}
+}
