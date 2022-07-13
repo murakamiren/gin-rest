@@ -1,8 +1,8 @@
 package types
 
-import "github.com/jinzhu/gorm"
+import "gorm.io/gorm"
 
-type BookStruct struct {
+type Book struct {
 	gorm.Model
 	Title string
 	Disc string

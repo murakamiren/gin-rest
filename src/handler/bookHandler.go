@@ -19,7 +19,7 @@ func GetBook() gin.HandlerFunc {
 	}
 }
 
-var books = []types.BookStruct{
+var books = []types.Book{
 	{Title: "nice book",Disc: "this is a nice book", Value: 300, Author: "fujie", IsPublished: false},
 	{Title: "bad book",Disc: "this is a bad book", Value: 500, Author: "fujie", IsPublished: true},
 	{Title: "golang book",Disc: "this is a golang book for beginners", Value: 1000, Author: "go", IsPublished: true},
