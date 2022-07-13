@@ -7,12 +7,14 @@ import (
 	"gorm.io/gorm"
 )
 
-var Db *gorm.DB
+var DB *gorm.DB
 
 func DbInit() {
-	Db, err := gorm.Open(sqlite.Open("src/db/data/test.db"), &gorm.Config{})
+	db, err := gorm.Open(sqlite.Open("src/db/data/test.db"), &gorm.Config{})
 	if err != nil {
 		panic("cannot open db")
 	}
-	Db.AutoMigrate(&types.Book{})
+	db.AutoMigrate(&types.Book{})
+
+	DB = db
 }

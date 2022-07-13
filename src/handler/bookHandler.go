@@ -15,8 +15,9 @@ func CreateBook() gin.HandlerFunc {
 		author := c.PostForm("author")
 
 		// insert
-		book := types.BookInput{Title: title ,Author: author}
-		result := db.Db.Create(&book)
+		book := types.Book{Title: title ,Author: author}
+		println(&book)
+		result := db.DB.Create(&book)
 
 		if result.Error != nil {
 			panic(result.Error)
