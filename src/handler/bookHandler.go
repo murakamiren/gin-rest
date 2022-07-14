@@ -4,6 +4,7 @@ import (
 	"gin-rest/src/db"
 	"gin-rest/src/types"
 	"net/http"
+	"strconv"
 
 	"github.com/gin-gonic/gin"
 )
@@ -27,12 +28,13 @@ func CreateBook() gin.HandlerFunc {
 	}
 }
 
-func GetBook() gin.HandlerFunc {
+func GetBookFromId() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{
-			"title": "nice book",
-			"author": "fujie",
-		})
+		var book types.Book
+		idParam := c.Param("id")
+		id, _ := strconv.Atoi(idParam)
+		db.DB.Where("id = ?", id).Find(&book)
+		c.JSON(http.StatusOK, gin.H{"data": book})
 	}
 }
 
