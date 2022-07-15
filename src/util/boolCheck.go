@@ -2,9 +2,9 @@ package util
 
 import "strconv"
 
-func BoolCheck(isPublished string) bool {
+func BoolCheck(intBool string) bool {
 
-	toInt, _ := strconv.Atoi(isPublished)
+	toInt, _ := strconv.Atoi(intBool)
 
 	if toInt == 0 {
 		return false
