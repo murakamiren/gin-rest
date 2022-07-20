@@ -45,3 +45,22 @@ func GetAllBooks() gin.HandlerFunc {
 		c.JSON(http.StatusOK, gin.H{"data": books})
 	}
 }
+
+func UpdateBook() gin.HandlerFunc {
+	return func (c *gin.Context) {
+		title := c.PostForm("title")
+		author := c.PostForm("author")
+		idParam := c.Param("id")
+		id, _ := strconv.Atoi(idParam)
+		db.DB.Model(&types.Book{}).Where("id = ?" ,id).Updates(types.Book{Title: title, Author: author})
+	}
+}
+
+func DeleteBook() gin.HandlerFunc {
+	return func (c *gin.Context) {
+		idParam := c.Param("id")
+		id, _ := strconv.Atoi(idParam)
+
+		db.DB.Delete(&types.Book{}, id)
+	}
+}
