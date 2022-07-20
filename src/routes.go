@@ -19,7 +19,7 @@ func DefineRoutes(router gin.IRouter) {
 	v1 := router.Group("/v1/api")
 	{
 		v1.GET("/test", testGetV1())
-		v1.GET("/book/:id", handler.GetBookFromId())
+		v1.GET("/book/:id", handler.GetBookById())
 		v1.POST("/book/add", handler.CreateBook())
 		v1.GET("/books", handler.GetAllBooks())
 	}

@@ -28,7 +28,7 @@ func CreateBook() gin.HandlerFunc {
 	}
 }
 
-func GetBookFromId() gin.HandlerFunc {
+func GetBookById() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		var book types.Book
 		idParam := c.Param("id")
